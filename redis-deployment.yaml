@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arslanansari-20453-redis-deployment
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      name: redis-pod
+  template:
+    metadata:
+      labels:
+        name: redis-pod
+    spec:
+      containers:
+        - name: redis-container
+          image: redis
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 2045
