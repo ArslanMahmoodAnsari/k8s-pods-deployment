@@ -6,11 +6,11 @@ metadata:
     name: redis-pod
 spec:
   containers:
-  - name: redis-container
-    image: redis
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-    ports:
-      - containerPort: 2045
+    - name: redis-container
+      image: redis
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      ports:
+        - containerPort: 2045
